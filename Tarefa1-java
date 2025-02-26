@@ -1,0 +1,592 @@
+Tarefa 1 Java:
+
+Exercício 1: Faça um algoritmo que leia a idade de uma pessoa expressa em anos, meses e dias e escreva a idade dessa pessoa expressa apenas em dias. Considerar ano com 365 dias e mês com 30 dias.
+
+
+/* Online Java Compiler and Editor */
+import java.util.*;
+public class Idade{
+
+     public static void main(String []args){
+        int ia, im, id, itd, ia2, im2, id2;
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Digite sua idade em anos, meses e dias");
+        
+        System.out.println("Digite os anos");
+        ia=sc.nextInt();
+         System.out.println("Digite os meses");
+        im=sc.nextInt();
+         System.out.println("Digite os dias");
+        id=sc.nextInt();
+        
+        ia2=ia*365;
+        im2=im*30;
+        id2=id*1;
+        itd=ia2+im2+id2;
+       
+        System.out.println("Sua idade somente em dias é");
+        System.out.println(itd);
+        
+        
+     }
+}
+
+Teste de mesa:
+
+Valor dos anos   Valor dos meses   Valor dos dias        Resultado em dias
+      38	      -	                -	              -	                       
+       -	      9	                -	              -	                        
+       -	      -	                5	              -	                        
+       - 	      -	                -		     14145           
+            
+
+
+Exercício 2: Escreva um algoritmo para ler o número total de eleitores de um município, o número de votos brancos, nulos e válidos. Calcular e escrever o percentual que cada um representa em relação ao total de eleitores. 
+
+import java.util.*;
+public class Idade{
+
+     public static void main(String []args){
+        int nte, vb, vn, vv;
+        float pvb, pvn, pvv;
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Eleicoes municipais");
+        
+        System.out.println("Digite o total de eleitores");
+        nte=sc.nextInt();
+         System.out.println("Digite o numero de votos brancos");
+        vb=sc.nextInt();
+         System.out.println("Digite o numero de votos nulos");
+        vn=sc.nextInt();
+        System.out.println("Digite o numero de votos validos");
+        vv=sc.nextInt();
+        
+        pvb=(nte/100)*vb;
+        pvn=(nte/100)*vn;
+        pvv=(nte/100)*vv;
+        
+        System.out.println("Opercentual de votos brancos e");
+        System.out.print(pvb);
+        System.out.println("%");
+        
+        System.out.println("Opercentual de votos nulos e");
+        System.out.print(pvn);
+        System.out.println("%");
+        
+        System.out.println("Opercentual de votos validos e");
+        System.out.print(pvv);
+        System.out.print("%");
+        
+        
+     }
+}
+
+Teste de mesa:
+
+          N: Eleitores     N: Votos brancos     N: Votos nulos     N: Votos válidos               
+             10000	        2500	            1500        	 6000 
+     	                        
+   	Resultado em %           25%                15%                   60%
+               
+
+
+Exercício 3:Escreva um algoritmo para ler o salário mensal atual de um funcionário e o percentual de reajuste. Calcular e escrever o valor do novo salário.
+
+import java.util.*;
+public class Idade{
+
+     public static void main(String []args){
+        float sat, pre, sre;
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Reajuste salario");
+        
+        System.out.println("Qual seu salario mensal atual");
+         System.out.print("R$ ");
+        sat=sc.nextInt();
+         System.out.println("Qual sera o percentual de reajuste");
+          System.out.print("% ");
+        pre=sc.nextInt();
+        
+        sre=(sat/100)*pre+sat;
+        
+        System.out.println("O novo salario sera ");
+        System.out.print("R$ ");
+        System.out.print(sre);
+       
+     }
+}
+
+Teste de mesa:
+
+  Salário atual    Valor do reajuste    Novo salário
+     2000                 -                  -
+      -                   5%                 -
+      -                   -                2100
+
+
+Exercício 4: O custo de um carro novo ao consumidor é a soma do custo de fábrica com a porcentagem do distribuidor e dos impostos (aplicados ao custo de fábrica). Supondo que o percentual do distribuidor seja de 28% e os impostos de 45%, escrever um algoritmo para ler o custo de fábrica de um carro, calcular e escrever o custo final ao consumidor. 
+
+import java.util.Scanner;
+
+public class CustoCarroNovo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Informe o custo de fábrica do carro: ");
+        double custoFabrica = scanner.nextDouble();
+
+        double percentualDistribuidor = 28.0 / 100.0;
+        double percentualImpostos = 45.0 / 100.0;
+
+        double custoDistribuidor = custoFabrica * percentualDistribuidor;
+        double custoImpostos = custoFabrica * percentualImpostos;
+
+        double custoFinalConsumidor = custoFabrica + custoDistribuidor + custoImpostos;
+
+        System.out.printf("O custo final ao consumidor é: %.2f\n", custoFinalConsumidor);
+        
+        scanner.close();
+    }
+}
+
+Teste de mesa:
+  Custo do carro    % distribuidor (28%)    % impostos (45%)    Custo final
+     10000                 -                      -                  -
+       -                  2800                    -                  -
+       -                   -                     4500                -
+       -                   -                      -                17300
+
+Exercício 5: Uma revendedora de carros usados paga a seus funcionários vendedores um salário fixo por mês, mais uma comissão também fixa para cada carro vendido e mais 5% do valor das vendas por ele efetuadas. Escrever um algoritmo que leia o número de carros por ele vendidos, o valor total de suas vendas, o salário fixo e o valor que ele recebe por carro vendido. Calcule e escreva o salário final do vendedor.
+
+import java.util.Scanner;
+
+public class SalarioVendedor {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Informe o número de carros vendidos: ");
+        int numCarrosVendidos = scanner.nextInt();
+        
+        System.out.print("Informe o valor total das vendas: ");
+        double valorTotalVendas = scanner.nextDouble();
+        
+        System.out.print("Informe o salário fixo: ");
+        double salarioFixo = scanner.nextDouble();
+        
+        System.out.print("Informe o valor recebido por carro vendido: ");
+        double comissaoPorCarro = scanner.nextDouble();
+
+        double comissaoTotal = numCarrosVendidos * comissaoPorCarro;
+        
+        double adicionalVendas = valorTotalVendas * 0.05;
+        
+        double salarioFinal = salarioFixo + comissaoTotal + adicionalVendas;
+        
+        System.out.printf("O salário final do vendedor é: %.2f\n", salarioFinal);
+        
+        scanner.close();
+    }
+}
+
+Teste de mesa:
+N carros vendidos    V: total das vendas    Salário fixo    V: rec. por carro    Salário final
+       10                    -                    -                 -                 -
+       -                     30                   -                 -                 -
+       -                     -                   1000               -                 -
+       -                     -                    -                 5                 -
+       -                     -                    -                 -               1051,50
+
+Exercício 6: Escreva um algoritmo para ler uma temperatura em graus Fahrenheit, calcular e escrever o valor correspondente em graus Celsius. Observação: Para testar se a sua resposta está correta saiba que 100°C = 212°F
+
+import java.util.Scanner;
+
+public class FahrenheitParaCelsius {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Informe a temperatura em graus Fahrenheit: ");
+        double fahrenheit = scanner.nextDouble();
+
+        double celsius = (fahrenheit - 32) * 5 / 9;
+
+        System.out.printf("A temperatura em graus Celsius é: %.2f\n", celsius);
+        
+        scanner.close();
+    }
+}
+
+Teste de mesa:
+
+  V: em Fahrenheit    V: em Celsius
+       212                 -
+        -                 100
+
+Exercício 7: Ler um valor e escrever a mensagem É MAIOR QUE 10! se o valor lido for maior que 10, caso contrário escrever NÃO É MAIOR QUE 10!
+
+import java.util.Scanner;
+
+public class VerificaValor {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Informe um valor: ");
+        int valor = scanner.nextInt();
+
+        if (valor > 10) {
+            System.out.println("É MAIOR QUE 10!");
+        } else {
+            System.out.println("NÃO É MAIOR QUE 10!");
+        }
+        
+        scanner.close();
+    }
+}
+
+Teste de mesa:
+
+  Numero digitado    maior que 10    menor que 10
+       16                Sim              -
+       -                  -               -
+
+Exercício 8: Ler um valor e escrever se é positivo ou negativo (considere o valor zero como positivo).
+
+import java.util.Scanner;
+
+public class VerificaPositivoNegativo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Informe um valor: ");
+        int valor = scanner.nextInt();
+
+        if (valor >= 0) {
+            System.out.println("O valor é positivo!");
+        } else {
+            System.out.println("O valor é negativo!");
+        }
+        
+        scanner.close();
+    }
+}
+
+Teste de mesa:
+  
+  Numero digitado    V: positivo    V: negativo
+        (- 10)             -           Sim
+          -               -             -
+
+Exercício 9: As maçãs custam R$ 1,30 cada se forem compradas menos de uma dúzia, e R$ 1,00 se forem compradas pelo menos doze. Escreva um programa que leia o número de maçãs compradas, calcule e escreva o custo total da compra. 
+
+import java.util.Scanner;
+
+public class CustoMacas {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Informe o número de maçãs compradas: ");
+        int numMacas = scanner.nextInt();
+
+        double custoTotal;
+        if (numMacas < 12) {
+            custoTotal = numMacas * 1.30;
+        } else {
+            custoTotal = numMacas * 1.00;
+        }
+
+        System.out.printf("O custo total da compra é: R$ %.2f\n", custoTotal);
+        
+        scanner.close();
+    }
+}
+
+Teste de mesa:
+
+N: maças compradas    Custo 1.30    Custo 1.00    V: final
+       20                  -             -            -
+       -                   -            Sim           -
+       -                   -             -           20,00
+
+
+Exercício 10: Ler as notas da 1a. e 2a. avaliações de um aluno. Calcular a média aritmética simples e escrever uma mensagem que diga se o aluno foi ou não aprovado (considerar que nota igual ou maior que 6 o aluno é aprovado). Escrever também a média calculada.
+
+import java.util.Scanner;
+
+public class MediaAluno {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Informe a nota da 1a. avaliação: ");
+        double nota1 = scanner.nextDouble();
+        
+        System.out.print("Informe a nota da 2a. avaliação: ");
+        double nota2 = scanner.nextDouble();
+
+        double media = (nota1 + nota2) / 2;
+
+        if (media >= 6) {
+            System.out.printf("A média é %.2f. O aluno foi aprovado!\n", media);
+        } else {
+            System.out.printf("A média é %.2f. O aluno não foi aprovado.\n", media);
+        }
+        
+        scanner.close();
+    }
+}
+
+
+Teste de mesa:
+
+  Nota1:    Nota2:    Média    Aprovado    Reprovado
+    8         -         -        -             -
+    -         7         -        -             -
+    -         -        7,5       -             -
+    -         -         -       Sim            -
+    -         -         -        -             -
+
+
+Exercício 11: Ler o ano atual e o ano de nascimento de uma pessoa. Escrever uma mensagem que diga se ela poderá ou não votar este ano (não é necessário considerar o mês em que a pessoa nasceu).
+
+import java.util.Scanner;
+
+public class Votacao {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Informe o ano atual: ");
+        int anoAtual = scanner.nextInt();
+        
+        System.out.print("Informe o ano de nascimento: ");
+        int anoNascimento = scanner.nextInt();
+
+        int idade = anoAtual - anoNascimento;
+
+        if (idade >= 16) {
+            System.out.println("Você poderá votar este ano!");
+        } else {
+            System.out.println("Você não poderá votar este ano.");
+        }
+        
+        scanner.close();
+    }
+}
+
+Teste de mesa:
+  Ano atual    Ano Nasc.    Apto a votar    Não apto a votar
+    2025          -              -                 -
+     -          1986             -                 -
+     -            -             Sim                -
+     -            -              -                 -
+
+Exercício 12: Ler dois valores (considere que não serão lidos valores iguais) e escrever o maior deles. 
+
+import java.util.Scanner;
+
+public class MaiorValor {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Informe o primeiro valor: ");
+        int valor1 = scanner.nextInt();
+
+        System.out.print("Informe o segundo valor: ");
+        int valor2 = scanner.nextInt();
+
+        if (valor1 > valor2) {
+            System.out.println("O maior valor é: " + valor1);
+        } else {
+            System.out.println("O maior valor é: " + valor2);
+        }
+        
+        scanner.close();
+    }
+}
+
+
+Teste de mesa:
+  Primeiro valor    Segundo valor    Primerio é maior    Segundo é maior
+        10               -                  -                   -
+        -                15                 -                   -
+        -                -                  -                   -
+        -                -                  =                   Sim
+
+
+Exercício 13: Ler dois valores (considere que não serão lidos valores iguais) e escrevê-los em ordem crescente.
+
+import java.util.Scanner;
+
+public class OrdenaValores {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Informe o primeiro valor: ");
+        int valor1 = scanner.nextInt();
+
+        System.out.print("Informe o segundo valor: ");
+        int valor2 = scanner.nextInt();
+
+        if (valor1 < valor2) {
+            System.out.println("Valores em ordem crescente: " + valor1 + ", " + valor2);
+        } else {
+            System.out.println("Valores em ordem crescente: " + valor2 + ", " + valor1);
+        }
+        
+        scanner.close();
+    }
+}
+
+
+Teste de mesa:
+  Primeiro valor    Segundo valor    Ordem crescente
+       15                -                 -
+       -                 10                -
+       -                 -               10, 15
+
+Exercício 14: Ler a hora de início e a hora de fim de um jogo de Xadrez (considere apenas horas inteiras, sem os minutos) e calcule a duração do jogo em horas, sabendo-se que o tempo máximo de duração do jogo é de 24 horas e que o jogo pode iniciar em um dia e terminar no dia seguinte.
+
+import java.util.Scanner;
+
+public class DuracaoJogoXadrez {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Informe a hora de início do jogo (0-23): ");
+        int horaInicio = scanner.nextInt();
+
+        System.out.print("Informe a hora de fim do jogo (0-23): ");
+        int horaFim = scanner.nextInt();
+
+        int duracao;
+        if (horaFim >= horaInicio) {
+            duracao = horaFim - horaInicio;
+        } else {
+            duracao = (24 - horaInicio) + horaFim;
+        }
+
+        System.out.println("A duração do jogo é de: " + duracao + " horas");
+        
+        scanner.close();
+    }
+}
+
+Teste de mesa:
+  Hora inicio    Hora fim    Tempo total do jogo
+      22             -               -
+      -              5               -
+      -              -               7
+
+
+Exercício 15: A jornada de trabalho semanal de um funcionário é de 40 horas. O funcionário que trabalhar mais de 40 horas receberá hora extra, cujo cálculo é o valor da hora regular com um acréscimo de 50%. Escreva um algoritmo que leia o número de horas trabalhadas em um mês, o salário por hora e escreva o salário total do funcionário, que deverá ser acrescido das horas extras, caso tenham sido trabalhadas (considere que o mês possua 4 semanas exatas). 
+
+import java.util.Scanner;
+
+public class SalarioFuncionario {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Informe o número de horas trabalhadas no mês: ");
+        int horasTrabalhadas = scanner.nextInt();
+        
+        System.out.print("Informe o salário por hora: ");
+        double salarioHora = scanner.nextDouble();
+
+        int horasSemana = 40;
+        int semanasMes = 4;
+        int horasMensais = horasSemana * semanasMes;
+        double adicionalHoraExtra = 1.5;
+
+        double salarioTotal;
+        if (horasTrabalhadas > horasMensais) {
+            int horasExtras = horasTrabalhadas - horasMensais;
+            salarioTotal = (horasMensais * salarioHora) + (horasExtras * salarioHora * adicionalHoraExtra);
+        } else {
+            salarioTotal = horasTrabalhadas * salarioHora;
+        }
+
+        System.out.printf("O salário total do funcionário é: R$ %.2f\n", salarioTotal);
+        
+        scanner.close();
+    }
+}
+
+Teste de mesa:
+  Horas trab. mês    Salário por hora    Salário total
+       240                 -                  -
+        -                10,00                -
+        -                  -                 2800,00
+
+Exercício 16: Na empresa em que trabalhamos, há tabelas com o gasto de cada mês. Para fechar o balanço do primeiro trimestre, precisamos somar o gasto total. Sabendo que, em janeiro, foram gastos 15 mil reais, em fevereiro, 23 mil reais e, em março, 17 mil reais, faça um programa que calcule e imprima a despesa total no trimestre e a média mensal de gastos.
+
+public class BalancoTrimestral {
+    public static void main(String[] args) {
+
+        double gastoJaneiro = 15000.0;
+        double gastoFevereiro = 23000.0;
+        double gastoMarço = 17000.0;
+
+        double gastoTotalTrimestre = gastoJaneiro + gastoFevereiro + gastoMarço;
+
+        double mediaMensalGastos = gastoTotalTrimestre / 3;
+
+        System.out.printf("O gasto total no trimestre é: R$ %.2f\n", gastoTotalTrimestre);
+        System.out.printf("A média mensal de gastos é: R$ %.2f\n", mediaMensalGastos);
+    }
+}
+
+Teste de mesa:
+  Gasto jan    Gasto fev    Gasto mar    Gasto total trimestre    Média mensal de gastos
+    15000          -            -               -                         -
+      -          23000          -               -                         -
+      -            -          17000             -                         -
+      -            -            -             55000                       -
+      -            -            -               -                       18333
+
+Exercício 17: Programa que leia as notas e calcule a média de LP1 deste semestre, referente a um determinado aluno.
+
+import java.util.Scanner;
+
+public class MediaLP1 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Informe a nota da P1: ");
+        double P1 = scanner.nextDouble();
+        
+        System.out.print("Informe a nota da E1: ");
+        double E1 = scanner.nextDouble();
+        
+        System.out.print("Informe a nota da E2: ");
+        double E2 = scanner.nextDouble();
+        
+        System.out.print("Informe a nota da API: ");
+        double API = scanner.nextDouble();
+        
+        System.out.print("Informe a nota de X: ");
+        double X = scanner.nextDouble();
+        
+        System.out.print("Informe a nota da SUB: ");
+        double SUB = scanner.nextDouble();
+
+        double mediaP1_Es = P1 * 0.6 + ((E1 + E2) / 2) * 0.4;
+        double parte1 = mediaP1_Es * 0.5;
+        double parte2 = (Math.max((mediaP1_Es - 5.9), 0) / (mediaP1_Es - 5.9)) * (API * 0.5);
+        double mediaLP1 = parte1 + parte2 + X + (SUB * 0.3);
+
+        System.out.printf("A média de LP1 deste semestre é: %.2f\n", mediaLP1);
+        
+        scanner.close();
+    }
+}
+
+Teste de mesa:
+  Nota P1    Nota E1    Nota E2    Nota API    Nota sub    Média LP1
+     3          -         -           -           -           -
+     -          6         -           -           -           -
+     -          -         5           -           -           -
+     -          -         -           5           -           -
+     -          -         -           -           7           -
+     -          -         -           -           -          8,10
+
+
