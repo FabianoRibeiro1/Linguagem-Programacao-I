@@ -1,0 +1,96 @@
+public class Pipa {
+
+    // Atributos da pipa
+    private String cor;
+    private double tamanho;
+    private String tipoDeLinha;
+    private boolean estaVoadora;
+
+    // Construtor da classe Pipa
+    public Pipa(String cor, double tamanho, String tipoDeLinha) {
+        this.cor = cor;
+        this.tamanho = tamanho;
+        this.tipoDeLinha = tipoDeLinha;
+        this.estaVoadora = false; // Inicialmente, a pipa não está voando
+    }
+
+    // Métodos getters e setters
+    public String getCor() {
+        return cor;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+
+    public double getTamanho() {
+        return tamanho;
+    }
+
+    public void setTamanho(double tamanho) {
+        this.tamanho = tamanho;
+    }
+
+    public String getTipoDeLinha() {
+        return tipoDeLinha;
+    }
+
+    public void setTipoDeLinha(String tipoDeLinha) {
+        this.tipoDeLinha = tipoDeLinha;
+    }
+
+    public boolean isEstaVoadora() {
+        return estaVoadora;
+    }
+
+    public void setEstaVoadora(boolean estaVoadora) {
+        this.estaVoadora = estaVoadora;
+    }
+
+    // Métodos específicos
+    public void voar() {
+        if (!estaVoadora) {
+            System.out.println("A pipa está subindo ao céu!");
+            estaVoadora = true;
+        } else {
+            System.out.println("A pipa já está voando!");
+        }
+    }
+
+    public void descer() {
+        if (estaVoadora) {
+            System.out.println("A pipa está descendo...");
+            estaVoadora = false;
+        } else {
+            System.out.println("A pipa já está no chão.");
+        }
+    }
+
+    public void mostrarStatus() {
+        System.out.println("Cor da pipa: " + cor);
+        System.out.println("Tamanho da pipa: " + tamanho + " metros");
+        System.out.println("Tipo de linha: " + tipoDeLinha);
+        System.out.println("Está voando? " + (estaVoadora ? "Sim" : "Não"));
+    }
+
+    // Método main para testar a classe
+    public static void main(String[] args) {
+        // Criando uma nova pipa
+        Pipa pipa1 = new Pipa("Vermelha", 3.0, "Nylon");
+
+        // Mostrando status da pipa
+        pipa1.mostrarStatus();
+
+        // Fazendo a pipa voar
+        pipa1.voar();
+
+        // Mostrando o status novamente
+        pipa1.mostrarStatus();
+
+        // Fazendo a pipa descer
+        pipa1.descer();
+
+        // Mostrando o status final
+        pipa1.mostrarStatus();
+    }
+}
