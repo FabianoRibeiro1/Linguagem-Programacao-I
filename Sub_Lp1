@@ -1,0 +1,76 @@
+Sub_LP1
+
+public class Bala {
+    private String cor;
+    private String tamanho;
+    private boolean retirada;
+
+    public Bala(String cor, String tamanho) {
+        this.cor = cor;
+        this.tamanho = tamanho;
+        this.retirada = false;
+    }
+
+    public String getCor() {
+        return cor;
+    }
+
+    public String getTamanho() {
+        return tamanho;
+    }
+
+    public void retirar() {
+        this.retirada = true;
+    }
+
+    public boolean foiRetirada() {
+        return retirada;
+    }
+}
+
+import java.util.ArrayList;
+
+public class Pote {
+    private ArrayList<Bala> balas;
+
+    public Pote() {
+        balas = new ArrayList<>();
+    }
+
+    public void adicionarBala(Bala bala) {
+        balas.add(bala);
+    }
+
+    public int totalBalas() {
+        return balas.size();
+    }
+}
+
+import java.util.Scanner;
+
+public class Probabilidade {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        Pote pote = new Pote();
+
+        System.out.print("Quantas balas vermelhas? ");
+        int vermelhas = input.nextInt();
+        for (int i = 0; i < vermelhas; i++) {
+            pote.adicionarBala(new Bala("vermelha", "Média"));
+        }
+
+        System.out.print("Quantas balas amarelas? ");
+        int amarelas = input.nextInt();
+        for (int i = 0; i < amarelas; i++) {
+            pote.adicionarBala(new Bala("amarela", "Média"));
+        }
+
+        int total = pote.totalBalas();
+
+        double probPrimeiraVermelha = (double) vermelhas / total;
+        double probSegundaAmarela = (double) amarelas / (total - 1);
+        double probTotal = probPrimeiraVermelha * probSegundaAmarela;
+
+        System.out.printf("Probabilidade de tirar uma vermelha e depois uma amarela: %.2f%%\n", probTotal * 100);
+    }
+}
